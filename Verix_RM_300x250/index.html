@@ -14,15 +14,21 @@
         <script src="code/script-min.js"></script>
 
         <script>
+        /* globals EB:true, console:true */
             window.onload = function(){
 
                 
                 var btn_play = document.getElementById("btn_play"),
                     video = document.getElementById("video");
 
-                var container_ebook = document.getElementById("container_ebook"),
+                var container_init = document.getElementById("container_init"),
+                    container_ebook = document.getElementById("container_ebook"),
                     container_video = document.getElementById("container_video"),
                     container_about = document.getElementById("container_about");
+
+                var nav_ebook = document.getElementById("nav_ebook"),
+                    nav_video = document.getElementById("nav_video"),
+                    nav_about = document.getElementById("nav_about");
 
                 var ebook_cta = document.getElementById("ebook_cta"),
                     video_cta = document.getElementById("video_cta"),
@@ -30,10 +36,22 @@
 
                 var cta_btns = [ebook_cta, video_cta, about_cta];
 
+                function video_pause(){
+                    console.log("video paused?");
+                    video.pause();
+                    btn_play.style.display = "block";
+                    video.style.display = "none";
+                    console.log("video paused");
+                }
+
                function cta_handler(event){
                     var cta_id = event.target.parentNode.id;
-                    
+                    video_pause();
+
                     switch (cta_id){
+                        case "cta_init":
+                            EB.clickthrough("EXIT INIT");
+                        break;
                         case "ebook_cta":
                             EB.clickthrough("EXIT EBOOK");
                         break;
@@ -75,7 +93,8 @@
 
                 function click_handler(event){
                     var tab_id = event.target.id;
-                    
+                    video_pause();
+                                        
                     container_init.style.display = "none";
                     container_ebook.style.display = "none";
                     container_video.style.display = "none";
@@ -118,12 +137,12 @@
             <div id="container_init">
                 <img src="img/bg_init.png" />
                 <img src="img/copy_init.png" alt="">
-                <img id="cta_init" src="img/cta_init.png" alt="">
                 <div id="logos" >
                     <div id="logo_keytech" class="logo" ></div>
                     <div id="logo_separator"></div>
                     <div id="logo_veryx" class="logo" ></div>
                 </div>
+                <img id="cta_init" src="img/cta_init.png" alt="">
 
             </div>
             <!--INIT-ENDS-->
@@ -177,6 +196,11 @@
                 
             </div>
             <!--ABOUT-ENDS-->
+            
+            <div class="buttons">
+                <button id="user-action-button" class="button useraction">UserAction</button>
+                <button id="clickthrough-button" class="button clickthrough">ClickThrough</button>
+            </div>
 
             <!--NAVIGATION-->
             <div id="container_nav">

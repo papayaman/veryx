@@ -55,6 +55,9 @@ body, html, * {
   #logos #logo_separator {
     border-left: 1px solid #fdb713; }
 
+#cta_init, #ebook_cta, #video_cta, #about_cta {
+  cursor: pointer; }
+
 #btn_play {
   position: absolute;
   top: 58px;

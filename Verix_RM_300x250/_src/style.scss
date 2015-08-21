@@ -81,6 +81,14 @@ body, html, * {
 }
 
 //++++++++++++++++++++++++
+// CTA
+//++++++++++++++++++++++++
+
+#cta_init, #ebook_cta, #video_cta, #about_cta {
+    cursor: pointer;
+}
+
+//++++++++++++++++++++++++
 // VIDEO
 //++++++++++++++++++++++++
 #btn_play {
