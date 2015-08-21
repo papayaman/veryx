@@ -29,6 +29,17 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/backup.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29258,
+		"inputAbbreviatedPath": "\/backup.jpg",
+		"outputAbbreviatedPath": "\/backup.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/code\/EBLoader.js": {
 		"fileType": 64,
 		"ignore": 0,

@@ -28,16 +28,16 @@ body, html, * {
 #container_nav {
   height: 45px !important; }
 
-#container_init, #container_ebook, #container_video, .buttons {
+#container_ebook, #container_video, #container_about, .buttons {
   display: none; }
 
 #logo_keytech {
   background: url(../img/logo_keytech.png) no-repeat;
-  background-position: 58px; }
+  background-position: 0px; }
 
 #logo_veryx {
   background: url(../img/logo_veryx.png) no-repeat;
-  background-position: -58px; }
+  background-position: 0px; }
 
 #logos {
   position: absolute;
@@ -127,22 +127,6 @@ body, html, * {
 
 ul li {
   list-style-type: disc; }
-
-button {
-  background-color: #0068FF;
-  border: none;
-  color: #FFF;
-  cursor: pointer;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  user-select: none; }
-
-.buttons {
-  position: absolute;
-  bottom: 0px;
-  right: 0px; }
 
 .video-container {
   height: 135px;
