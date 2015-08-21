@@ -85,21 +85,21 @@
                     nav_video.className = "";
                     nav_about.className = "";
 
-                    clickthrough();
                     switch (tab_id){
                         case "nav_ebook":
                             nav_ebook.className = "active";
                             container_ebook.style.display = "block";
+                            EB.userActionCounter("NAV EBOOK");
                         break;
                         case "nav_video":
                             nav_video.className = "active";
                             container_video.style.display = "block";
+                            EB.userActionCounter("NAV VIDEO");
                         break;
                         case "nav_about":
                             nav_about.className = "active";
                             container_about.style.display = "block";
-
-                            
+                            EB.userActionCounter("NAV ABOUT");
                         break;
                     }
                 }
@@ -117,7 +117,7 @@
             <!--INIT-->
             <div id="container_init">
                 <img src="img/bg_init.png" />
-                <img src="copy/copy_init.png" alt="">
+                <img src="img/copy_init.png" alt="">
                 <img id="cta_init" src="img/cta_init.png" alt="">
                 <div id="logos" >
                     <div id="logo_keytech" class="logo" ></div>

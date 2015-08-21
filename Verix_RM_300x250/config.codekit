@@ -71,17 +71,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/copy\/copy_init.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 10267,
-		"inputAbbreviatedPath": "\/copy\/copy_init.png",
-		"outputAbbreviatedPath": "\/copy\/copy_init.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/css\/style.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -124,13 +113,24 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/img\/btn_play.png": {
+	"\/img\/btn_play.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28871,
+		"inputAbbreviatedPath": "\/img\/btn_play.jpg",
+		"outputAbbreviatedPath": "\/img\/btn_play.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/img\/copy_init.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 5539,
-		"inputAbbreviatedPath": "\/img\/btn_play.png",
-		"outputAbbreviatedPath": "\/img\/btn_play.png",
+		"initialSize": 5257,
+		"inputAbbreviatedPath": "\/img\/copy_init.png",
+		"outputAbbreviatedPath": "\/img\/copy_init.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
