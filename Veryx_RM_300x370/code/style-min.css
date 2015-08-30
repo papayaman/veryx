@@ -1,0 +1,285 @@
+body, html, * {
+  padding: 0px;
+  margin: 0px;
+  text-decoration: none;
+  border: none; }
+
+#ad {
+  background: #000000;
+  position: absolute;
+  display: block;
+  overflow: hidden;
+  width: 300px;
+  height: 370px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
+  #ad > div {
+    position: absolute;
+    width: 300px;
+    height: 370px; }
+    #ad > div img {
+      position: absolute;
+      width: 300px;
+      height: 370px;
+      left: 0px; }
+
+sup {
+  line-height: 18px;
+  vertical-align: top; }
+
+#container_nav.animate #nav_tabs {
+  margin: -45px 0px; }
+
+#init_bg, #init_copy1, #init_copy2 {
+  position: absolute;
+  width: 300px;
+  height: 370px; }
+
+#init_bg.animate {
+  left: -300px; }
+
+#init_copy1.animate {
+  left: 300px; }
+
+#init_copy2.animate {
+  opacity: 0;
+  top: 20px; }
+
+#init_cta.animate {
+  opacity: 0; }
+
+#logos.animate #logo_keytech {
+  background-position: 55px 0px !important; }
+
+#logos.animate #logo_veryx {
+  background-position: -55px 0px !important; }
+
+#logo_keytech, #logo_veryx {
+  -webkit-transition: background-position 0.6s;
+          transition: background-position 0.6s; }
+
+#init_copy2, #init_cta {
+  opacity: 1;
+  top: 0px;
+  -webkit-transition: all 0.3s;
+          transition: all 0.3s; }
+
+#init_bg, #init_copy1 {
+  left: 0px;
+  -webkit-transition: left 0.3s;
+          transition: left 0.3s; }
+
+#container_nav {
+  height: 45px !important;
+  overflow: hidden; }
+
+.container_active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s; }
+
+.display_none {
+  display: none; }
+
+#container_ebook, #container_video, #container_about {
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: display 0s linear, opacity 0.3s linear;
+          transition: display 0s linear, opacity 0.3s linear;
+  -webkit-transition-delay: 0.3s 0s;
+          transition-delay: 0.3s 0s; }
+
+#logo_keytech {
+  background: url(../img/logo_keytech.png) no-repeat; }
+
+#logo_veryx {
+  background: url(../img/logo_veryx.png) no-repeat; }
+
+#logos {
+  position: absolute;
+  width: 120px;
+  height: 35px;
+  bottom: 15px;
+  left: 96px; }
+  #logos div {
+    display: inline-block;
+    vertical-align: top;
+    height: 35px; }
+  #logos .logo {
+    width: 55px;
+    background-size: 55px 35px;
+    background-position: 0px; }
+  #logos #logo_separator {
+    border-left: 1px solid #fdb713; }
+
+#init_cta, #ebook_cta, #video_cta, #about_cta {
+  cursor: pointer; }
+
+.cta_over {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  opacity: 0;
+  -webkit-transition: all 0.3s linear;
+          transition: all 0.3s linear; }
+
+#ebook_cta:hover .cta_over, #video_cta:hover .cta_over, #about_cta:hover .cta_over {
+  opacity: 1; }
+
+#nav_tabs {
+  font-size: 0;
+  -webkit-transition: margin 0.3s linear;
+          transition: margin 0.3s linear; }
+
+#nav_tabs li {
+  display: inline-block;
+  vertical-align: middle;
+  color: #FFFFFF;
+  background-size: auto 90px;
+  height: 44px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s linear;
+          transition: all 0.2s linear; }
+  #nav_tabs li:hover {
+    color: #fdb713;
+    background-color: #000000;
+    background-position: 0px -45px; }
+  #nav_tabs li.active {
+    color: #fdb713;
+    background-color: #000000;
+    background-position: 0px -45px;
+    height: 45px; }
+
+#nav_ebook {
+  width: 70px;
+  background-image: url(../img/ebook_nav.png); }
+
+#nav_video {
+  width: 105px;
+  background-image: url(../img/video_nav.png); }
+
+#nav_about {
+  width: 125px;
+  background-image: url(../img/about_nav.png); }
+
+.content_scrollable {
+  position: absolute;
+  top: 60px;
+  left: 105px;
+  height: 170px;
+  width: 183px;
+  color: #FFFFFF;
+  overflow: hidden;
+  list-style-type: disc; }
+  .content_scrollable p, .content_scrollable li {
+    font-family: 'Monserrat', sans-serif, Arial;
+    font-size: 15px;
+    line-height: 18px; }
+  .content_scrollable ul {
+    padding: 10px 10px 10px 20px; }
+  .content_scrollable li {
+    color: #fdb713; }
+
+.scroll {
+  width: 90%; }
+
+::-webkit-scrollbar-track {
+  background: #1b1b1b;
+  box-shadow: 0,0,0; }
+
+::-webkit-scrollbar {
+  width: 6px; }
+
+::-webkit-scrollbar-thumb {
+  background-color: #525252; }
+
+.iScrollVerticalScrollbar {
+  position: absolute;
+  z-index: 9999;
+  width: 10px;
+  bottom: 2px;
+  top: 0px;
+  right: 0px;
+  overflow: hidden; }
+
+.iScrollIndicator {
+  position: absolute; }
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+  width: 10px;
+  background-color: #525252; }
+
+.iScrollLoneScrollbar {
+  background-color: #1B1B1B;
+  width: 10px; }
+
+ul li {
+  list-style-type: disc; }
+
+#btn_play {
+  position: absolute;
+  top: 95px;
+  left: 30px;
+  width: 240px;
+  height: 141px;
+  cursor: pointer; }
+  #btn_play img {
+    width: 240px !important;
+    height: 142px !important; }
+
+.video-container {
+  height: 134px;
+  position: absolute;
+  width: 238px;
+  visibility: hidden; }
+
+.centered {
+  bottom: 0;
+  left: 0;
+  margin: 95px auto;
+  position: absolute;
+  right: 0;
+  top: 0px; }
+
+video {
+  height: 100%;
+  width: 100%; }
+
+.ios-center-video-controls video::-webkit-media-controls {
+  min-width: 0; }
+
+.sdk .sdk-video-player {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-size: cover; }
+
+.sdk .sdk-video-player-button {
+  cursor: pointer;
+  position: absolute;
+  width: 240px;
+  height: 142px;
+  background: url("../img/play.png") no-repeat scroll 0px 0px;
+  background-size: cover; }
+
+#border_top {
+  height: 1px !important;
+  background-color: rgba(255, 255, 255, 0.7); }
+
+#border_right {
+  width: 1px !important;
+  background-color: rgba(255, 255, 255, 0.7);
+  right: 0px; }
+
+#border_bottom {
+  height: 1px !important;
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 0px; }
+
+#border_left {
+  width: 1px !important;
+  background-color: rgba(255, 255, 255, 0.7); }

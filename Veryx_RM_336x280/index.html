@@ -1,0 +1,292 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title></title>
+        <link rel="stylesheet" href="code/style-min.css" />
+        
+        <script>
+            EBModulesToLoad = ['Video', 'EBCMD'];
+        </script>
+        <script src="code/EBLoader.js"></script>
+        <script src="code/script-min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.1.1/iscroll-min.js"></script>
+
+        <script>
+        /* globals EB:true, console:true */
+            window.onload = function(){
+
+                var eScrollbar, aScrollbar;
+                    
+                function ecreateScrollBar() {
+                    eScrollbar = new IScroll( "#ebook_scroll", {
+                        scrollbars: "custom", 
+                        mouseWheel: true,
+                        interactiveScrollbars: true,
+                        shrinkScrollbars: "scale"
+                    });
+                    console.log(ecreateScrollBar);
+                }
+
+                function acreateScrollBar() {
+                    aScrollbar = new IScroll( "#about_scroll", {
+                        scrollbars: "custom", 
+                        mouseWheel: true,
+                        interactiveScrollbars: true,
+                        shrinkScrollbars: "scale"
+                    });
+                    console.log(acreateScrollBar);
+                }
+                
+                var btn_play = document.getElementById("btn_play"),
+                    video = document.getElementById("video");
+
+                var container_nav = document.getElementById("container_nav"),
+                    container_init = document.getElementById("container_init"),
+                    container_ebook = document.getElementById("container_ebook"),
+                    container_video = document.getElementById("container_video"),
+                    container_about = document.getElementById("container_about");
+
+                var nav_ebook = document.getElementById("nav_ebook"),
+                    nav_video = document.getElementById("nav_video"),
+                    nav_about = document.getElementById("nav_about");
+
+                var ebook_cta = document.getElementById("ebook_cta"),
+                    video_cta = document.getElementById("video_cta"),
+                    about_cta = document.getElementById("about_cta");
+
+                var cta_btns = [container_init, ebook_cta, video_cta, about_cta];
+
+                function video_pause(){
+                    video.pause();
+                    btn_play.style.display = "block";
+                    video.style.display = "none";
+                }
+
+               function cta_handler(event){
+                    var cta_id = event.target.parentNode.id;
+                    video_pause();
+                    console.log("EB.clickthrough() " + cta_id);
+
+                    switch (cta_id){
+                        case "cta_init":
+                            EB.clickthrough("EXIT INIT");
+                        break;
+                        case "ebook_cta":
+                            EB.clickthrough("EXIT EBOOK");
+                        break;
+                        case "video_cta":
+                            EB.clickthrough("EXIT VIDEO");
+                        break;
+                        case "about_cta":
+                            EB.clickthrough("EXIT ABOUT");
+                        break;
+                    }
+                } 
+
+                for(var cta = 0; cta < cta_btns.length; cta++){
+                    cta_btns[cta].addEventListener("click", cta_handler);
+                }
+                
+                //++++++++++++++++++++++++++++++++++
+                // VIDEO 
+                //++++++++++++++++++++++++++++++++++
+                btn_play.onclick = function(){
+                    console.log("click");
+                    video.play();
+                };
+
+                video.addEventListener("play", function(){
+                    btn_play.style.display = "none";
+                    video.style.display = "block";
+                });
+
+                video.addEventListener("ended", function(){
+                    btn_play.style.display = "block";
+                    video.style.display = "none";                    
+                });
+
+                //++++++++++++++++++++++++++++++++++
+                // NAVIGATION
+                //++++++++++++++++++++++++++++++++++
+                var nav_btns = [ nav_ebook, nav_video, nav_about];
+
+                function click_handler(event){
+                    var tab_id = event.target.id;
+                    video_pause();
+                                        
+                    container_init.style.display = "none";
+                    container_ebook.className = "";
+                    container_video.className = "";
+                    container_about.className = "";
+
+                    nav_ebook.className = "";
+                    nav_video.className = "";
+                    nav_about.className = "";
+
+                    switch (tab_id){
+                        case "nav_ebook":
+                            nav_ebook.className = "active";
+                            container_ebook.className = "container_active";
+                            EB.userActionCounter("NAV EBOOK");
+                            setTimeout ( function(){ecreateScrollBar();}, 400 );
+                        break;
+                        case "nav_video":
+                            nav_video.className = "active";
+                            container_video.className = "container_active";
+                            EB.userActionCounter("NAV VIDEO");
+                        break;
+                        case "nav_about":
+                            nav_about.className = "active";
+                            container_about.className = "container_active";
+                            EB.userActionCounter("NAV ABOUT");
+                            setTimeout ( function(){acreateScrollBar();}, 400 );
+                        break;
+                    }
+                }
+
+                for(var tab = 0; tab < nav_btns.length; tab++){
+                    nav_btns[tab].addEventListener("click", click_handler);
+                }
+
+                //++++++++++++++++++++++++++++++++++
+                // ANIMATION
+                //++++++++++++++++++++++++++++++++++
+
+                function remove_animate(element){
+                    element.className = "";
+                }
+
+
+
+                var init_bg = document.getElementById("init_bg"),
+                    init_copy1 = document.getElementById("init_copy1"),
+                    init_copy2 = document.getElementById("init_copy2"),
+                    init_cta = document.getElementById("init_cta");
+
+                setTimeout(function(){ 
+                    remove_animate(init_copy1);
+                    remove_animate(logos);
+                }, 800);
+
+                setTimeout(function(){ 
+                    remove_animate(init_bg);
+                }, 1000);
+
+                setTimeout(function(){ 
+                    remove_animate(init_copy2);
+                }, 2000);
+
+                setTimeout(function(){ 
+                    remove_animate(container_nav);
+                }, 3000);
+
+                setTimeout(function(){ 
+                    remove_animate(init_cta);
+                }, 4000);
+
+            };        
+        </script>
+    </head>
+    <body>
+        <div id="ad">
+            <div id="logos_container">
+                <div id="logos" class="animate" >
+                    <div id="logo_keytech" class="logo" ></div>
+                    <div id="logo_separator"></div>
+                    <div id="logo_veryx" class="logo" ></div>
+                </div>
+            </div>
+
+            <!--INIT-->
+            <div id="container_init" class="animate">
+                <div id="init_bg" class="animate" ><img src="img/init_bg.png" /></div>
+                <div id="init_copy1" class="animate" ><img src="img/init_copy1.png" alt="" /> </div>
+                <div id="init_copy2" class="animate" ><img src="img/init_copy2.png" alt="" /> </div>
+                <div id="init_cta" class="animate" ><img src="img/init_cta.png" alt=""></div>
+
+            </div>
+            <!--INIT-ENDS-->
+            
+            <!--VIDEO-->
+            <div id="container_video" class="display_none">
+                <div id="video_cta">
+                    <img class="cta_over" src="img/video_cta_over.png" />
+                    <img class="cta" src="img/video_cta.png">
+                </div>
+                <div id="video-container" class="video-container centered">
+                    <video id="video" controls poster="img/video_poster.png">
+                        <source src="videos/video.mp4" type="video/mp4">
+                        <source src="videos/video.webm" type="video/webm">
+                        Your browser does not support the <code>video</code> element.
+                    </video>
+                    <div id="sdk-video-player" class="sdk-video-player">
+                        <div id="sdk-video-play-button" class="sdk-video-player-button centered"></div>
+                    </div>
+                </div>
+                <div id="btn_play"><img src="img/video_play.png" /></div>
+            </div>
+            <!--VIDEO-ENDS-->
+
+            <!--ABOUT-->
+            <div id="container_ebook" class="display_none">
+                <img src="img/ebook_bg.png" />
+                <div id="ebook_cta">
+                    <img class="cta_over" src="img/ebook_cta_over.png" />
+                    <img class="cta" src="img/ebook_cta.png">
+                </div>
+                <div id="ebook_scroll" class="content_scrollable">
+                    <div class="scroll">
+                        <p>Gain insight into the unprecedented change and complexity facing food processors worldwide, including:</p>
+                        <ul>
+                            <li>Major factors impacting food sorting globally</li>
+                            <li>Their affect on operations and business</li>
+                            <li>Best practices from top plant engineers and owner/operators globally</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!--ABOUT-ENDS-->
+
+            <!--ABOUT-->
+            <div id="container_about" class="display_none">
+                <img src="img/about_bg.png" />
+                <div id="about_cta">
+                    <img class="cta_over" src="img/about_cta_over.png" />
+                    <img class="cta" src="img/about_cta.png">
+                </div>
+                <div id="about_scroll" class="content_scrollable">
+                    <div class="scroll">
+                        <p>Transform your business with VERYX<sup>&trade;</sup>, the world’s most intelligent digital sorting platform.</p>
+                        <ul>
+                            <li>Sustained 100% surface inspection</li>
+                            <li>Multi-sensor pixel data fusion</li>
+                            <li>Intuitive user experience and extreme ease of use/maintenance </li>
+                            <li>Advanced automation and analytics</li>
+                        </ul>
+                    </div>
+                </div>                
+            </div>
+            <!--ABOUT-ENDS-->
+
+            <!--NAVIGATION-->
+            <div id="container_nav" class="animate">
+                <ul id="nav_tabs">
+                    <li id="nav_ebook"></li>
+                    <li id="nav_video"></li>
+                    <li id="nav_about"></li>
+                </ul>
+            </div>
+            <!--NAVIGATION-ENDS-->
+
+            <!--BORDER-->
+            <div id="border_top"></div>
+            <div id="border_right"></div>
+            <div id="border_bottom"></div>
+            <div id="border_left"></div>
+            <!--BORDER-ENDS-->
+
+        </div>
+    </body>
+</html>

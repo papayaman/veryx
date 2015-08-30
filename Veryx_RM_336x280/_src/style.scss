@@ -1,0 +1,362 @@
+$document_width : 336px;
+$document_height : 280px;
+
+$brand_yellow: #fdb713;
+$border_color : rgba(255,255,255,0.7);
+
+body, html, * {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    border: none;
+}
+
+#ad {
+    background: #000000;
+    position: absolute;
+    display: block;
+    overflow: hidden;
+    width: $document_width;
+    height: $document_height;
+    user-select: none;
+    > div {
+        position: absolute;
+        width: $document_width;
+        height: $document_height;
+        img {
+            position: absolute;
+            width: $document_width;
+            height: $document_height;
+            left: 0px;
+        }
+    }
+}
+
+sup {
+    line-height: 18px;
+    vertical-align: top;
+}
+
+//++++++++++++++++++++++++
+// ANIMATION
+//++++++++++++++++++++++++
+
+#container_nav.animate #nav_tabs {
+    margin: -50px 0px;
+}
+
+#init_bg, #init_copy1, #init_copy2 {
+    position: absolute;
+    width: $document_width;
+    height: $document_height;
+}
+
+#init_bg.animate {
+    left: - $document_width;
+}
+
+#init_copy1.animate  {
+    left: $document_width;
+}
+
+#init_copy2.animate {
+    opacity: 0;
+    top: 20px;
+}
+
+#init_cta.animate {
+    opacity: 0;
+}
+
+#logos.animate #logo_keytech {
+    background-position: 47px 0px !important;
+}
+
+#logos.animate #logo_veryx {
+    background-position: -47px 0px !important;
+}
+
+#logo_keytech, #logo_veryx {
+    transition: background-position 0.6s;
+}
+
+#init_copy2, #init_cta {
+    opacity: 1;
+    top: 0px;
+    transition: all 0.3s;
+}
+
+#init_bg, #init_copy1 {
+    left: 0px;
+    transition: left 0.3s;
+}
+
+//++++++++++++++++++++++++
+// CONTAINERS
+//++++++++++++++++++++++++
+#container_nav {
+    height: 50px !important;
+    overflow: hidden;
+}
+
+.container_active {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transition-delay: 0s;
+}
+
+.display_none {
+    display: none;
+}
+
+#container_ebook, #container_video, #container_about {
+    visibility: hidden;
+    opacity: 0;
+    transition: display 0s linear, opacity 0.3s linear;
+    transition-delay: 0.3s 0s; 
+}
+
+//++++++++++++++++++++++++
+// LOGOS
+//++++++++++++++++++++++++
+#logo_keytech {
+    background: url(../img/logo_keytech.png) no-repeat;
+}
+
+#logo_veryx {
+    background: url(../img/logo_veryx.png) no-repeat;
+}
+
+#logos {
+    position: absolute;
+    width: 105px;
+    height: 30px;
+    bottom: 15px;
+    right: 15px;
+    div {
+        display: inline-block;
+        vertical-align: top;
+        height: 30px;
+    }
+    .logo {
+        width: 47px;
+        background-size: 47px 30px;
+        background-position: 0px;
+    }
+    #logo_separator {
+        border-left: 1px solid $brand_yellow;
+    }
+}
+
+//++++++++++++++++++++++++
+// CTA
+//++++++++++++++++++++++++
+
+#init_cta, #ebook_cta, #video_cta, #about_cta {
+    cursor: pointer;
+}
+
+.cta_over {
+    user-select: none;
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+#ebook_cta:hover .cta_over, #video_cta:hover .cta_over, #about_cta:hover .cta_over {
+    opacity: 1;
+}
+
+//++++++++++++++++++++++++
+// NAVIGATION
+//++++++++++++++++++++++++
+#nav_tabs {
+    font-size: 0;
+    transition: margin 0.3s linear;
+}
+
+#nav_tabs li {
+    display: inline-block;
+    vertical-align: middle;
+    color: #FFFFFF;
+    background-size: auto 101px;
+    height: 51px;
+    cursor: pointer;
+    transition: all 0.2s linear; 
+    &:hover {
+        color: $brand_yellow;
+        background-color: #000000;
+        background-position: 0px -50px;
+    }
+    &.active {
+        color: $brand_yellow;
+        background-color: #000000;
+        background-position: 0px -51px;
+        //background-size: auto 101px;
+        height: 51px;
+    }
+}
+
+#nav_ebook{
+    width: 78px;
+    background-image: url(../img/ebook_nav.png);
+}
+
+#nav_video{
+    width: 118px;
+    background-image: url(../img/video_nav.png);
+}
+
+#nav_about{
+    width: 140px;
+    background-image: url(../img/about_nav.png);
+}
+
+//++++++++++++++++++++++++
+//SCROLLABLE CONTENT 
+//++++++++++++++++++++++++
+
+.content_scrollable {
+    position: absolute;
+    top: 75px;
+    left: 120px;
+    height: 138px;
+    width: 200px;
+    color: #FFFFFF;
+    overflow: hidden;
+    list-style-type: disc;
+    p, li {
+        font-family: 'Monserrat', sans-serif, Arial;
+        font-size: 15px;
+        line-height: 18px;
+    }
+    ul {
+        padding: 10px 10px 10px 20px;
+    }
+    li {
+        color: #fdb713;
+    }
+}
+
+.scroll {
+    width: 90%;
+}
+
+::-webkit-scrollbar-track {
+    background: #1b1b1b;
+    box-shadow: 0,0,0;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #525252;
+}
+
+.iScrollVerticalScrollbar {
+    position: absolute;
+    z-index: 9999;
+    width: 10px;
+    bottom: 2px;
+    top: 0px;
+    right: 0px;
+    overflow: hidden;
+}
+
+.iScrollIndicator {
+    position: absolute;
+}
+
+.iScrollVerticalScrollbar .iScrollIndicator {
+    width: 10px;
+    background-color: #525252;
+}
+
+.iScrollLoneScrollbar{
+    background-color:#1B1B1B;
+    width: 10px;
+}
+
+ul li {list-style-type: disc;}
+
+
+//++++++++++++++++++++++++
+// VIDEO
+//++++++++++++++++++++++++
+
+#btn_play {
+    position: absolute;
+    top: 72px;
+    left: 48px;
+    width: 240px;
+    height: 141px;
+    cursor: pointer;
+    img {
+        width: 240px !important;
+        height: 141px !important;
+    }
+}
+
+.video-container {
+    height: 142px;
+    position: absolute;
+    width: 240px;
+    visibility: hidden;
+}
+.centered {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0px;
+}
+video {
+    height: 100%;
+    width: 100%;
+}
+.ios-center-video-controls video::-webkit-media-controls {
+    min-width: 0;
+}
+
+.sdk .sdk-video-player {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    background-size: cover;
+}
+
+.sdk .sdk-video-player-button {
+    cursor: pointer;
+    position: absolute;
+    width: 240px;
+    height: 142px;
+    background: url("../img/play.png") no-repeat scroll 0px 0px;
+    background-size: cover;
+}
+
+//++++++++++++++++++++++++
+// BORDER
+//++++++++++++++++++++++++
+
+#border_top {
+    height: 1px !important;
+    background-color: $border_color;
+}
+
+#border_right {
+    width: 1px !important;
+    background-color: $border_color;
+    right: 0px;
+}
+
+#border_bottom {
+    height: 1px !important;
+    background-color: $border_color;
+    bottom: 0px;
+}
+
+#border_left {
+    width: 1px !important;
+    background-color: $border_color;
+
+}
